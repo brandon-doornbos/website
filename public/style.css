@@ -1,4 +1,18 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
     background-color: #111;
     color: #fff;
+}
+
+#title {
+    font-size: 64px;
+    font-weight: 500;
+    font-family: Sans;
+    text-align: left;
+    color: #0000;
+    background-image: linear-gradient(135deg, #ff4136, #5b53ff);
+    background-clip: text;
 }
