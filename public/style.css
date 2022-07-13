@@ -6,15 +6,55 @@
     font-size: 20px;
 }
 
-html {
-    background-color: #111;
-    color: #fff;
+body {
+    margin: 0px;
+}
+
+button {
+    padding: 10px;
+    margin: 15px;
+    border: none;
+    background-image: linear-gradient(135deg, #ff4136, #5b53ff);
+    transition: all 200ms ease-in-out;
+}
+
+button:hover {
+    transition: all 200ms ease-in-out;
+    background-image: linear-gradient(135deg, #ff4136, #5b53ff);
+}
+
+button:active {
+    border: solid 1px white;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
 }
 
 #title {
+    margin: 0px;
     font-size: 64px;
     font-weight: 500;
     color: #0000;
-    background-image: linear-gradient(135deg, #ff4136, #5b53ff);
+    background-image: linear-gradient(90deg, #ff4136, #5b53ff);
     background-clip: text;
+    text-align: center;
+}
+
+#subtitle {
+    margin: 0px;
+}
+
+#landing_button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#landing_button:hover {
+    border-radius: 25%;
 }
