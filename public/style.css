@@ -41,6 +41,12 @@ section {
     justify-content: center;
     flex-direction: column;
     height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#landing {
+    background-image: url("./back-0.jpg");
 }
 
 #landing-title {
