@@ -73,3 +73,11 @@ section {
     height: 54px;
     margin: 18px;
 }
+
+#index {
+    background-image: url("./back-1.jpg");
+}
+
+#index-title {
+    max-width: 50%;
+}
