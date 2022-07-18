@@ -1,9 +1,13 @@
 window.addEventListener("DOMContentLoaded", main);
 
 function main() {
-    document.getElementById("landing-button").addEventListener("click", () => {
+    addButtonListener("landing-button", "index");
+}
+
+function addButtonListener(button, element) {
+    document.getElementById(button).addEventListener("click", () => {
         window.scrollTo({
-            top: document.getElementById("index").offsetTop,
+            top: document.getElementById(element).offsetTop,
             behavior: 'smooth'
         });
     });
