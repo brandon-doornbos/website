@@ -32,7 +32,9 @@ button:hover {
 }
 
 button:active {
-    transition: all 50ms ease-in-out;
+    transition: all 25ms ease-in-out;
+    padding: 13px;
+    margin: 17px;
 }
 
 section {
@@ -69,9 +71,8 @@ section {
 }
 
 #landing-button:active {
-    width: 54px;
-    height: 54px;
-    margin: 18px;
+    width: 56px;
+    height: 56px;
 }
 
 #index {
