@@ -89,10 +89,16 @@ section {
     background-image: url("./back-1.webp");
 }
 
-#index-title {
-    max-width: 50%;
+.index-title {
+    max-width: 60%;
 }
 
 #content-coding {
     background-image: url("./back-2.webp");
+}
+
+@media screen and (max-width: 500px) {
+    .index-title {
+        max-width: 80%;
+    }
 }
