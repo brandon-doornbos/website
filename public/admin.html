@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <title>Admin - Brandon Doornbos</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Admin page, statistics." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@^3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@^2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@^1"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body style="background-color: #111;">
+    <main style="display: flex; align-items: center; justify-content: center;">
+        <div style="width: 90vw;">
+            <h2>Analytics</h2>
+            <div style="position: absolute; left: 10px; top: 10px;">
+                <label for="max-y-slider" style="font-size: 16px;">Max visits</label>
+                <input id="max-y-slider" type="range" min="0" max="0" />
+            </div>
+            <canvas id="graph" />
+            <script>
+                const graph = new Chart(document.getElementById("graph").getContext("2d"), {
+                    type: 'line',
+                    data: {
+                        datasets: [{
+                            label: 'visits',
+                            fill: false,
+                            borderWidth: 1,
+                            lineTension: 0,
+                            pointRadius: 2.5,
+                            borderColor: ['rgba(150, 150, 150, 1)'],
+                            pointBorderWidth: 0,
+                            pointBackgroundColor: 'rgba(150, 150, 150, 1)'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            x: {
+                                type: 'time',
+                                time: {
+                                    // Luxon format string
+                                    tooltipFormat: 'd-L-y'
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Date'
+                                }
+                            },
+                            y: {
+                                // max: 200
+                            }
+                        }
+                    }
+                });
+
+                const maxYSlider = document.getElementById("max-y-slider");
+                maxYSlider.addEventListener("change", () => {
+                    graph.options.scales.y.max = Math.floor(maxYSlider.value);
+                    graph.update();
+                });
+
+                fetch('/analytics', { method: "GET" })
+                    .then((res) => { return res.json(); })
+                    .then((data) => {
+                        if (!data)
+                            return;
+
+                        let dataset = [];
+                        let dates = {};
+
+                        for (let obj of data) {
+                            const seconds = parseInt(obj.time);
+                            const date = new Date(seconds * 1000);
+
+                            const day = Math.floor(seconds / 60 / 60 / 24);
+
+                            if (!dates[day])
+                                dates[day] = 0;
+
+                            dates[day] += 1;
+                        }
+
+                        for (let [day, visits] of Object.entries(dates)) {
+                            if (visits > maxYSlider.max) maxYSlider.max = visits;
+                            dataset.push({ x: luxon.DateTime.fromSeconds(day * 60 * 60 * 24), y: visits });
+                        }
+
+                        graph.data.datasets[0].data = dataset;
+
+                        maxYSlider.max = Math.floor(maxYSlider.max * 1.05);
+                        maxYSlider.value = maxYSlider.max;
+                        graph.options.scales.y.max = Math.floor(maxYSlider.value);
+
+                        graph.update();
+                    }).catch((err) => console.error(err));
+            </script>
+        </div>
+    </main>
+</body>
+
+</html>
