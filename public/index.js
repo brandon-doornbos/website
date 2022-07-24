@@ -5,6 +5,8 @@ function main() {
     addButtonListener("index-button-coding", "content-coding");
     addButtonListener("index-button-photography", "content-photography");
     addButtonListener("button-top", "landing");
+
+    fetch("/visit");
 }
 
 function addButtonListener(button, element) {
