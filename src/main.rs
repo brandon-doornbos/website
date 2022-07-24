@@ -32,8 +32,8 @@ async fn analytics(mut db: Connection<Analytics>) -> Json<Vec<Visit>> {
         .unwrap_or_default()
         .into_iter()
         .map(|r| Visit {
-            ip: r.get(0),
-            time: r.get(1),
+            ip: r.try_get(0).unwrap_or_default(),
+            time: r.try_get(1).unwrap_or_default(),
         })
         .collect(),
     )
