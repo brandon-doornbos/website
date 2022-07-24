@@ -10,6 +10,14 @@ body {
     margin: 0px;
 }
 
+#logo {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 75px;
+    cursor: pointer;
+}
+
 button {
     padding: 10px;
     margin: 20px;
