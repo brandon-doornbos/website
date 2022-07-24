@@ -1,4 +1,9 @@
 window.addEventListener("DOMContentLoaded", main);
+window.addEventListener("load", () => {
+    const img = new Image();
+    img.onload = () => document.getElementById("landing").style.backgroundImage = "url(\"back-0.webp\"), url(\"back-0_min.webp\")";
+    img.src = "back-0.webp";
+});
 
 function main() {
     addButtonListener("landing-button", "index");
