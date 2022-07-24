@@ -4,7 +4,12 @@ function main() {
     addButtonListener("landing-button", "index");
     addButtonListener("index-button-coding", "content-coding");
     addButtonListener("index-button-photography", "content-photography");
-    addButtonListener("button-top", "landing");
+
+    const sections = document.getElementsByTagName("section");
+    const buttonUp = document.getElementById("button-up");
+    const buttonDown = document.getElementById("button-down");
+    onScroll(sections, buttonUp, buttonDown);
+    window.addEventListener("scroll", () => onScroll(sections, buttonUp, buttonDown));
 
     fetch("/visit");
 }
@@ -16,4 +21,36 @@ function addButtonListener(button, element) {
             behavior: 'smooth'
         });
     });
+}
+
+function onScroll(sections, buttonUp, buttonDown) {
+    let top = 0, bottom = sections[sections.length - 1].offsetTop, minDiff = Infinity, maxDiff = Infinity;
+
+    for (const section of sections) {
+        let diff = window.scrollY - section.offsetTop;
+        if (diff > (window.innerHeight * 0.05) && diff < minDiff) {
+            top = section.offsetTop;
+            minDiff = diff;
+        }
+
+        diff = section.offsetTop - window.scrollY;
+        if (diff > (window.innerHeight * 0.05) && diff < maxDiff) {
+            bottom = section.offsetTop;
+            maxDiff = diff;
+        }
+    }
+
+    buttonUp.onclick = () => {
+        window.scrollTo({
+            top,
+            behavior: 'smooth'
+        });
+    };
+
+    buttonDown.onclick = () => {
+        window.scrollTo({
+            top: bottom,
+            behavior: 'smooth'
+        });
+    };
 }

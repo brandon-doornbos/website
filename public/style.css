@@ -32,7 +32,21 @@ button:active {
     margin: 17px;
 }
 
-#button-top {
+#button-up {
+    position: fixed;
+    right: 10px;
+    bottom: 70px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#button-up:active {
+    width: 56px;
+    height: 56px;
+}
+
+#button-down {
     position: fixed;
     right: 10px;
     bottom: 10px;
@@ -41,7 +55,7 @@ button:active {
     border-radius: 50%;
 }
 
-#button-top:active {
+#button-down:active {
     width: 56px;
     height: 56px;
 }
