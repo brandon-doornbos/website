@@ -10,6 +10,10 @@ body {
     margin: 0px;
 }
 
+h2 {
+    max-width: 60%;
+}
+
 #logo {
     position: fixed;
     top: 15px;
@@ -111,10 +115,6 @@ section {
     background-image: url("./back-1.webp");
 }
 
-.index-title {
-    max-width: 60%;
-}
-
 #content-coding {
     background-image: url("./back-2.webp");
 }
@@ -128,7 +128,7 @@ section {
 }
 
 @media screen and (max-width: 500px) {
-    .index-title {
+    h2 {
         max-width: 80%;
     }
 }
