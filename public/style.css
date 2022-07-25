@@ -119,6 +119,10 @@ section {
     background-image: url("./back-2.webp");
 }
 
+#footer {
+    height: 25vh;
+}
+
 @media screen and (max-width: 500px) {
     .index-title {
         max-width: 80%;
