@@ -119,6 +119,10 @@ section {
     background-image: url("./back-2.webp");
 }
 
+#content-photography {
+    background-image: url("./back-3.webp");
+}
+
 #footer {
     height: 25vh;
 }
