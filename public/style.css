@@ -15,6 +15,7 @@ h2 {
 }
 
 #logo {
+    z-index: 10;
     position: fixed;
     top: 15px;
     left: 15px;
@@ -45,6 +46,7 @@ button:active {
 }
 
 #button-up {
+    z-index: 10;
     position: fixed;
     right: 10px;
     bottom: 70px;
@@ -59,6 +61,7 @@ button:active {
 }
 
 #button-down {
+    z-index: 10;
     position: fixed;
     right: 10px;
     bottom: 10px;
