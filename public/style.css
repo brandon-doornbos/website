@@ -201,6 +201,17 @@ hr {
     background-image: url("./back-3.webp");
 }
 
+#photography-carousel {
+    width: 70vw;
+    height: min-content;
+    box-shadow: 5px 5px 5px #000;
+    border-radius: 5px;
+}
+
+#photography-carousel .carousel-button-next {
+    right: 15vw;
+}
+
 #footer {
     height: 25vh;
 }
@@ -221,6 +232,14 @@ hr {
     }
 
     .carousel-button-next {
+        right: 5vw;
+    }
+
+    #photography-carousel {
+        width: 90vw;
+    }
+
+    #photography-carousel .carousel-button-next {
         right: 5vw;
     }
 }
