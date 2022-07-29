@@ -9,12 +9,13 @@ function main() {
     addButtonListener("logo", "landing");
 
     for (const carousel of document.getElementsByClassName("carousel")) {
+        const items = carousel.getElementsByClassName("carousel-item");
         carousel.style.gridTemplateColumns = `repeat(${items.length}, 100%)`;
         carousel.index = 0;
 
         carousel.getElementsByClassName("carousel-button-next")[0].addEventListener("click", () => {
             carousel.index += 1;
-            if (carousel.index > carousel.getElementsByClassName("carousel-item").length - 1)
+            if (carousel.index > items.length - 1)
                 carousel.index = 0;
 
             carousel.scrollTo({
@@ -26,7 +27,7 @@ function main() {
         carousel.getElementsByClassName("carousel-button-previous")[0].addEventListener("click", () => {
             carousel.index -= 1;
             if (carousel.index < 0)
-                carousel.index = carousel.getElementsByClassName("carousel-item").length - 1;
+                carousel.index = items.length - 1;
 
             carousel.scrollTo({
                 left: carousel.index * carousel.clientWidth,
