@@ -4,12 +4,40 @@ window.addEventListener("load", () => {
     img.onload = () => document.getElementById("landing").style.backgroundImage = "url(\"back-0.webp\"), url(\"back-0_min.webp\")";
     img.src = "back-0.webp";
 });
+window.addEventListener("resize", resize);
 
 function main() {
     addButtonListener("landing-button", "index");
     addButtonListener("index-button-coding", "content-coding");
     addButtonListener("index-button-photography", "content-photography");
     addButtonListener("logo", "landing");
+
+    for (const carousel of document.getElementsByClassName("carousel")) {
+        carousel.style.gridTemplateColumns = `repeat(${items.length}, 100%)`;
+        carousel.index = 0;
+
+        carousel.getElementsByClassName("carousel-button-next")[0].addEventListener("click", () => {
+            carousel.index += 1;
+            if (carousel.index > carousel.getElementsByClassName("carousel-item").length - 1)
+                carousel.index = 0;
+
+            carousel.scrollTo({
+                left: carousel.index * carousel.clientWidth,
+                behavior: 'smooth'
+            });
+        });
+
+        carousel.getElementsByClassName("carousel-button-previous")[0].addEventListener("click", () => {
+            carousel.index -= 1;
+            if (carousel.index < 0)
+                carousel.index = carousel.getElementsByClassName("carousel-item").length - 1;
+
+            carousel.scrollTo({
+                left: carousel.index * carousel.clientWidth,
+                behavior: 'smooth'
+            });
+        });
+    }
 
     const sections = document.getElementsByTagName("section");
     const buttonUp = document.getElementById("button-up");
@@ -59,4 +87,15 @@ function onScroll(sections, buttonUp, buttonDown) {
             behavior: 'smooth'
         });
     };
+}
+
+function resize() {
+    for (const carousel of document.getElementsByClassName("carousel")) {
+        const items = carousel.getElementsByClassName("carousel-item");
+
+        carousel.scrollTo({
+            left: carousel.index * items[0].scrollWidth,
+            behavior: 'auto'
+        });
+    }
 }
