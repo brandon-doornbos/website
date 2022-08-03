@@ -90,12 +90,6 @@ function load() {
     const img = new Image();
     img.onload = () => document.getElementById("landing").style.backgroundImage = "url(\"back-0.webp\"), url(\"back-0_min.webp\")";
     img.src = "back-0.webp";
-
-    const photographyCarousel = document.getElementById("photography-carousel");
-    const photographyCarouselButtonPrevious = photographyCarousel.getElementsByClassName("carousel-button-previous")[0];
-    photographyCarouselButtonPrevious.style.height = `${photographyCarousel.clientHeight}px`;
-    const photographyCarouselButtonNext = photographyCarousel.getElementsByClassName("carousel-button-next")[0];
-    photographyCarouselButtonNext.style.height = `${photographyCarousel.clientHeight}px`;
 }
 
 function resize() {

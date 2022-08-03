@@ -24,6 +24,11 @@ h2 {
     max-width: 60%;
 }
 
+h3 {
+    max-width: 60%;
+    font-size: 18px;
+}
+
 a {
     color: var(--color-hyperlink);
 }
@@ -204,23 +209,16 @@ hr {
     background-image: url("./back-3.webp");
 }
 
-#photography-carousel {
-    width: 70vw;
-    height: min-content;
-    box-shadow: 5px 5px 5px #000;
-    border-radius: 5px;
-}
-
-#photography-carousel .carousel-button-next {
-    right: 15vw;
-}
-
 #footer {
     height: 25vh;
 }
 
 @media screen and (max-width: 500px) {
     h2 {
+        max-width: 80%;
+    }
+
+    h3 {
         max-width: 80%;
     }
 }
@@ -235,14 +233,6 @@ hr {
     }
 
     .carousel-button-next {
-        right: 5vw;
-    }
-
-    #photography-carousel {
-        width: 90vw;
-    }
-
-    #photography-carousel .carousel-button-next {
         right: 5vw;
     }
 }
