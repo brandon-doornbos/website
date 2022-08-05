@@ -8,7 +8,7 @@ use rocket_db_pools::{
     Connection, Database,
 };
 use serde::Serialize;
-use std::net::IpAddr;
+use std::{fs::read_dir, net::IpAddr};
 
 #[derive(Database)]
 #[database("analytics")]
@@ -102,10 +102,32 @@ async fn analytics(mut db: Connection<Analytics>) -> Json<Vec<Visit>> {
     )
 }
 
+#[get("/photo_dir")]
+async fn photo_dir() -> Json<Vec<String>> {
+    let mut paths = vec![];
+
+    let dir = read_dir(relative!("public/photography")).unwrap();
+    for path in dir {
+        let raw_name = format!("{:?}", path.unwrap().file_name());
+        let name = raw_name
+            .get(1..(raw_name.len() - 1))
+            .unwrap_or_default()
+            .to_string();
+
+        if name.ends_with(".webp") {
+            paths.push(name);
+        }
+    }
+
+    paths.sort_unstable();
+    paths.reverse();
+    Json(paths)
+}
+
 #[rocket::launch]
 fn rocket() -> _ {
     rocket::build()
         .attach(Analytics::init())
         .mount("/", FileServer::from(relative!("public")))
-        .mount("/", routes![visit, analytics])
+        .mount("/", routes![visit, analytics, photo_dir])
 }
