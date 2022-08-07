@@ -129,5 +129,6 @@ fn rocket() -> _ {
     rocket::build()
         .attach(Analytics::init())
         .mount("/", FileServer::from(relative!("public")))
+        .mount("/projects", FileServer::from(relative!("../")).rank(-10))
         .mount("/", routes![visit, analytics, photo_dir])
 }
