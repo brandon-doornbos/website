@@ -1,12 +1,8 @@
-[default]
-address = "0.0.0.0"
-
 [default.databases.analytics]
 url = "db.sqlite"
 
-[release]
-port = 4430
+[debug]
+address = "0.0.0.0"
 
-[release.tls]
-certs = "/etc/letsencrypt/live/brandond.nl/fullchain.pem"
-key = "/etc/letsencrypt/live/brandond.nl/privkey.pem"
+[release]
+port = 9000
