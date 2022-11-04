@@ -116,6 +116,7 @@ section {
     color: transparent;
     background-image: linear-gradient(90deg, var(--background-gradient-color-1), var(--background-gradient-color-2));
     background-clip: text;
+    -webkit-background-clip: text;
 }
 
 #landing-subtitle {
