@@ -43,7 +43,12 @@
                     <a href="https://github.com/brandon-doornbos/hummingbird-js" target="_blank">brandon-doornbos/hummingbird-js</a>
                     <p>⚙️ Simple and fast 2D rendering engine for WebGL.</p>
                     <hr />
-                    <p><span style="color: #f1e05a;">●</span> JavaScript ⭐ 3</p>
+                    <p><span style="color: #f1e05a;">●</span> JavaScript<span id="hummingbird-js-stars"></span></p>
+                    <script>
+                        fetch("https://api.github.com/repos/brandon-doornbos/hummingbird-js")
+                            .then((response) => { return response.json(); })
+                            .then((data) => { document.getElementById("hummingbird-js-stars").innerText = " ⭐ " + data.stargazers_count; });
+                    </script>
                 </div>
                 <div class="carousel-item">
                     <a href="https://github.com/brandon-doornbos/vibin" target="_blank">brandon-doornbos/vibin</a>
