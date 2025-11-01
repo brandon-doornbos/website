@@ -3,9 +3,7 @@
     --color-text: #fff;
     --font-family: Arial, sans-serif;
     --background-color: #111;
-    --background-gradient-color-1: #ff4136;
-    --background-gradient-color-2: #5b53ff;
-    --background-gradient: linear-gradient(135deg, var(--background-gradient-color-1), var(--background-gradient-color-2));
+    --button-color: #1c1b22;
 }
 
 * {
@@ -31,9 +29,9 @@ body {
 
 button {
     padding: 10px;
-    margin: 20px;
+    margin: 10px;
     border: none;
-    background-image: var(--background-gradient);
+    background-color: var(--button-color);
     transition: all 200ms ease-in-out;
     z-index: 10;
     position: fixed;
@@ -46,17 +44,16 @@ button {
 
 button:hover {
     transition: all 200ms ease-in-out;
-    background-image: var(--background-gradient);
-    box-shadow: 0px 0px 10px #fff;
+    box-shadow: 0px 0px 10px #777;
     cursor: pointer;
 }
 
 button:active {
     transition: all 25ms ease-in-out;
-    padding: 13px;
-    margin: 17px;
-    width: 56px;
-    height: 56px;
+    padding: 10px;
+    margin: 8px;
+    width: 54px;
+    height: 54px;
 }
 
 section {

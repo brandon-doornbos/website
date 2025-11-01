@@ -5,7 +5,7 @@
     <title>Home - Brandon Doornbos</title>
     <meta charset="utf-8" />
     <meta name="description" content="Personal website of Brandon Doornbos." />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
     <meta name="referrer" content="no-referrer">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href="style.css" rel="stylesheet" type="text/css" />
@@ -16,32 +16,50 @@
     <main>
         <button id="button-up">▲</button>
         <button id="button-down">▼</button>
-        <img src="logo.svg" id="logo"></img>
+        <img src="logo.webp" id="logo"></img>
         <section id="landing">
+            <img class="background" style="filter: none;" src="back-0.webp">
             <i id="landing-subtitle">Hi, I'm</i>
-            <h1 id="landing-title">Brandon Doornbos</h1>
+            <h1 id="landing-title">Brandon</h1>
             <button id="landing-button">▼</button>
         </section>
         <section id="index">
+            <img class="background" src="back-1.webp">
             <i id="index-subtitle">About me</i>
-            <h2 class="index-title">I've always had a great interest in computers and technology, which is why I decided
-                to study Computing Science at the University of Groningen.</h2>
-            <h2 class="index-title">In my free time, I'm a coder and photographer, also blowing off steam by gaming with
-                friends.</h2>
+            <h2 class="index-title">From a young age I've been the <a href="https://nl.wikipedia.org/wiki/Willie_Wortel"
+                    target="_blank">Willie Wortel</a> of the family. Always being
+                curious about science and tech especially.</h2>
+            <h2 class="index-title">Currently spending a gap year as shiftmanager at McDonald's, learning a lot
+                about leadership and people skills. Also applying some of my computer skills (see Coding). Tying nicely
+                into starting my Computing Science bachelor's at the <a
+                    href="https://www.rug.nl/bachelors/computing-science/?lang=en" target="_blank">RUG</a> next year.
+            </h2>
+            <h2 class="index-title">My time off is spent either on the computer, outside with my camera (maybe rock
+                climbing) or under my cars.</h2>
             <div id="index-button-container">
                 <button id="index-button-coding">Coding ▼</button>
                 <button id="index-button-photography">Photography ▼</button>
+                <button id="index-button-cars">Cars ▼</button>
             </div>
         </section>
         <section id="content-coding">
+            <img class="background" src="back-2.webp">
             <i>Coding</i>
-            <h2>It took me 6 years to realize how bad JavaScript is, so most of my projects use it. Currently I really
-                like Rust.
-                My larger projects are on my <a href="https://github.com/brandon-doornbos" target="_blank">Github</a>
-                and some are shown below.</h2>
+            <h2>I've been <a href="https://github.com/brandon-doornbos" target="_blank">programming</a> since 2015,
+                starting with JavaScript due to its accessibility. Transitioning to Rust a few years later, attracted by
+                its nice semantics and compile time performance/safety.
+            </h2>
             <div class="carousel">
                 <button class="carousel-button-previous">◂</button>
                 <button class="carousel-button-next">▸</button>
+                <div class="carousel-item">
+                    <p>Verspil 🍔</p>
+                    <p>Digitized waste management developed for my job (5 restaurants currently). Rust backend
+                        for serving the frontend and managing the database. Plain HTML, CSS and JavaScript frontend for
+                        logging in, writing off and viewing data.</p>
+                    <hr />
+                    <p><span style="color: #dea584;">●</span> Rust <span style="color: #f1e05a;">●</span> JavaScript</p>
+                </div>
                 <div class="carousel-item">
                     <a href="https://github.com/brandon-doornbos/hummingbird-js"
                         target="_blank">brandon-doornbos/hummingbird-js</a>
@@ -55,36 +73,22 @@
                     </script>
                 </div>
                 <div class="carousel-item">
+                    <a href="https://github.com/brandon-doornbos/mijnloon" target="_blank">brandon-doornbos/mijnloon</a>
+                    <p>🗓️ Reverse engineered web scraper and ICS exporter for my work schedule.</p>
+                    <hr />
+                    <p><span style="color: #dea584;">●</span> Rust</p>
+                </div>
+                <div class="carousel-item">
                     <a href="https://github.com/brandon-doornbos/vibin" target="_blank">brandon-doornbos/vibin</a>
                     <p>🎵 Simple Discord music bot, that streams its music from YouTube. Made with
                         Discord.JS and yt-dlp.</p>
                     <hr />
                     <p><span style="color: #3178c6;">●</span> TypeScript</p>
                 </div>
-                <div class="carousel-item">
-                    <a href="https://projects.brandond.nl/LD/46_Tree%20of%20Life/" target="_blank">Tree of Life</a>
-                    <p>🌳 Small tower defense game for the 46th Ludum Dare game jam with the theme "Keep it alive". <a
-                            target="blank_" href="https://ldjam.com/events/ludum-dare/46/tree-of-life-1">Ludum Dare
-                            entry</a>.</p>
-                    <hr />
-                    <p><span style="color: #f1e05a;">●</span> JavaScript</p>
-                </div>
-                <div class="carousel-item">
-                    <a href="https://github.com/brandon-doornbos/modeling" target="_blank">brandon-doornbos/modeling</a>
-                    <p>⚛️ Physics modeling application developed for my high school physics class.</p>
-                    <hr />
-                    <p><span style="color: #f1e05a;">●</span> JavaScript</p>
-                </div>
-                <div class="carousel-item">
-                    <a href="https://projects.brandond.nl/JS/Other/Flappy%20AI/" target="_blank">Flappy Bird
-                        AI</a>
-                    <p>🤖 Neuroevolution of augmenting topologies AI demo, using a custom neural network library.</p>
-                    <hr />
-                    <p><span style="color: #f1e05a;">●</span> JavaScript</p>
-                </div>
             </div>
         </section>
         <section id="content-photography">
+            <img class="background" src="back-3.webp">
             <i>Photography</i>
             <h3>When my dad bought our first DSLR in 2010, I was just 6 years old, however I fell in love with
                 photography instantly.
@@ -98,6 +102,23 @@
                 <em>Sony FE 50mm f/1.8</em> prime. Alternatively, I use the included zoom lens, <em>Sony FE 28-70mm
                     f/3.5-5.6</em>.
             </h3>
+        </section>
+        <section id="content-cars">
+            <img class="background" src="back-4.webp">
+            <i>Cars</i>
+            <div id="car-container">
+                <div>
+                    <img src="starlet.webp">
+                    <h4>Daily driver 'Toyota Starlet XLi' from 1995. No modern features (except a sunroof :)) and just
+                        75hp but will probably outlive me and still does 0-100km/h in just over 10 seconds.</h4>
+                </div>
+                <div>
+                    <img src="126.webp">
+                    <h4>Project 'Fiat 126p' from 1986. Air cooled 650cc engine that produces 24hp on a good day if both
+                        cylinders decide to fire. Can't even legally drive at the moment but it does get a lot of looks.
+                        (not just because it is extremely loud :P)</h4>
+                </div>
+            </div>
         </section>
         <section id="footer">
             <p>Copyright © 2025 Brandon Doornbos</p>

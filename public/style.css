@@ -1,23 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 :root {
     --color-hyperlink: #0f91ff;
     --color-text: #fff;
-    --font-family: Arial, sans-serif;
+    --font-family: Inter;
     --background-color: #111;
-    --background-gradient-color-1: #ff4136;
-    --background-gradient-color-2: #5b53ff;
-    --background-gradient: linear-gradient(135deg, var(--background-gradient-color-1), var(--background-gradient-color-2));
+    --button-color: #1c1b22;
 }
 
 * {
     box-sizing: border-box;
     color: var(--color-text);
     font-family: var(--font-family);
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
 }
 
 body {
     margin: 0px;
+    background-color: var(--background-color);
+}
+
+main {
+    overflow-x: hidden;
+    position: relative;
+}
+
+.background {
+    position: absolute;
+    height: 100vh;
+    min-width: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(70%);
 }
 
 h2 {
@@ -27,6 +42,11 @@ h2 {
 h3 {
     max-width: 60%;
     font-size: 18px;
+}
+
+h4 {
+    margin-top: 5px;
+    font-size: 16px;
 }
 
 a {
@@ -43,25 +63,24 @@ a {
 }
 
 button {
-    padding: 10px;
-    margin: 20px;
+    padding: 14px;
+    margin: 10px;
     border: none;
-    border-radius: 10px;
-    background-image: var(--background-gradient);
+    border-radius: 5px;
+    background-color: var(--button-color);
     transition: all 200ms ease-in-out;
 }
 
 button:hover {
     transition: all 200ms ease-in-out;
-    background-image: var(--background-gradient);
-    box-shadow: 0px 0px 10px #fff;
+    box-shadow: 0px 0px 10px #777;
     cursor: pointer;
 }
 
 button:active {
     transition: all 25ms ease-in-out;
-    padding: 13px;
-    margin: 17px;
+    padding: 16px;
+    margin: 8px;
 }
 
 #button-up {
@@ -72,11 +91,12 @@ button:active {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    padding: 10px;
 }
 
 #button-up:active {
-    width: 56px;
-    height: 56px;
+    width: 54px;
+    height: 54px;
 }
 
 #button-down {
@@ -90,8 +110,8 @@ button:active {
 }
 
 #button-down:active {
-    width: 56px;
-    height: 56px;
+    width: 54px;
+    height: 54px;
 }
 
 section {
@@ -100,23 +120,19 @@ section {
     justify-content: center;
     flex-direction: column;
     height: 100vh;
-    background-color: var(--background-color);
-    background-size: cover;
-    background-position: center;
-}
-
-#landing {
-    background-image: url("./back-0_min.webp");
 }
 
 #landing-title {
     margin: 0px;
     font-size: 64px;
     font-weight: 500;
-    color: transparent;
-    background-image: linear-gradient(90deg, var(--background-gradient-color-1), var(--background-gradient-color-2));
-    background-clip: text;
-    -webkit-background-clip: text;
+    --shadow-blur: 4px;
+    --shadow-color: #00000055;
+    text-shadow:
+        -1px -1px var(--shadow-blur) var(--shadow-color),
+        1px -1px var(--shadow-blur) var(--shadow-color),
+        -1px 1px var(--shadow-blur) var(--shadow-color),
+        1px 1px var(--shadow-blur) var(--shadow-color);
 }
 
 #landing-subtitle {
@@ -130,16 +146,8 @@ section {
 }
 
 #landing-button:active {
-    width: 56px;
-    height: 56px;
-}
-
-#index {
-    background-image: url("./back-1.webp");
-}
-
-#content-coding {
-    background-image: url("./back-2.webp");
+    width: 54px;
+    height: 54px;
 }
 
 .carousel {
@@ -206,8 +214,20 @@ hr {
     color: #fff5;
 }
 
-#content-photography {
-    background-image: url("./back-3.webp");
+#car-container {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#car-container>div {
+    max-width: 500px;
+}
+
+#car-container>div>img {
+    max-width: 500px;
 }
 
 #footer {
@@ -235,5 +255,13 @@ hr {
 
     .carousel-button-next {
         right: 5vw;
+    }
+
+    #car-container>div {
+        max-width: 300px;
+    }
+
+    #car-container>div>img {
+        max-width: 300px;
     }
 }

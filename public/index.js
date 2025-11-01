@@ -1,11 +1,11 @@
 window.addEventListener("DOMContentLoaded", main);
-window.addEventListener("load", load);
 window.addEventListener("resize", resize);
 
 function main() {
     addButtonListener("landing-button", "index");
     addButtonListener("index-button-coding", "content-coding");
     addButtonListener("index-button-photography", "content-photography");
+    addButtonListener("index-button-cars", "content-cars");
     addButtonListener("logo", "landing");
 
     for (const carousel of document.getElementsByClassName("carousel")) {
@@ -84,12 +84,6 @@ function onScroll(sections, buttonUp, buttonDown) {
             behavior: 'smooth'
         });
     };
-}
-
-function load() {
-    const img = new Image();
-    img.onload = () => document.getElementById("landing").style.backgroundImage = "url(\"back-0.webp\"), url(\"back-0_min.webp\")";
-    img.src = "back-0.webp";
 }
 
 function resize() {
